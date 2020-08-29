@@ -1,0 +1,186 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= name %></p>
+<%- include ('partials/messages') %>
+
+<!-- Button ADD PLAYER -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add player
+</button>
+
+  <!-- The Modal  ADD PLAYER-->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add new player to database</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+        <form action="/users/dashboard" method="POST">
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="Enter Name"
+              />
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position</label><br>
+                <select name="position" id="position exampleFormControlSelect1" class="form-control">
+                  <option value="Attack">Napad</option>
+                  <option value="Defend">Odbrana</option>
+                  <option value="Middle">Vezni red</option>
+                  <option value="Goalkeeper">Golman</option>
+                  <option value="Staff">Stručni štab</option>
+                  <option value="Coach">Trener</option>
+                </select>
+            </div>
+
+            <div class="row">
+              <div class="col">
+              <label for="number">Jersey number</label>
+              <input
+                type="text"
+                id="number"
+                name="number"
+                class="form-control"
+                placeholder="Enter player's jersey number"
+              />
+            
+          </div>
+
+
+            <div class="col">
+                <label for="age">Age</label>
+                <input
+                  type="text"
+                  id="age"
+                  name="age"
+                  class="form-control"
+                  placeholder="Enter player's age"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="games">Games</label>
+                <input
+                  type="text"
+                  id="games"
+                  name="games"
+                  class="form-control"
+                  placeholder="Enter number of games"
+                />
+            </div>
+
+            <div class="col">
+                <label for="goals">Goals</label>
+                <input
+                  type="text"
+                  id="goals"
+                  name="goals"
+                  class="form-control"
+                  placeholder="Enter number of goals"
+                />
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label for="redCartons">Number of red cartons</label>
+                <input
+                  type="text"
+                  id="redCartons"
+                  name="redCartons"
+                  class="form-control"
+                  placeholder="Enter number of red cartons"
+                />
+            </div>
+
+            <div class="col">
+                <label for="yellowCartons">Number of yellow cartons</label>
+                <input
+                  type="text"
+                  id="yellowCartons"
+                  name="yellowCartons"
+                  class="form-control"
+                  placeholder="Enter number of yellow cartons"
+                />
+             </div>
+            </div>
+             <br><br>
+            <button type="submit" class="btn btn-primary btn-block">Add</button>
+          </form>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- ADD NEWS -->
+
+<!-- Button ADD PLAYER -->
+<button type="button" class="btn bg-warning text-white" data-toggle="modal" data-target="#myModal">
+  Add news
+</button>
+
+<!-- The Modal  ADD PLAYER-->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add new article</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        
+      <form action="/users/dashboard" method="POST">
+
+          <div class="form-group">
+            <label for="nameNews">Name</label>
+            <input
+              type="text"
+              id="nameNews"
+              name="nameNews"
+              class="form-control"
+              placeholder="Enter Name"
+            />
+          </div>
+
+           
+          <button type="submit" class="btn btn-primary btn-block">Add</button>
+        </form>
+
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<a href="/users/logout" class="btn btn-secondary">Logout</a>

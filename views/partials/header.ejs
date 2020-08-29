@@ -1,0 +1,86 @@
+<header>
+  <div class="info">
+     <p class="p-info">069 913 549  |   veky.ef@gmail.com 
+        <a href="#" class="my-icons"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="my-icons"><i class="fa fa-instagram"></i></a>
+      </p>
+  </div>
+
+<div class="topnav" id="myTopnav"> 
+
+  <a  class="image-container"  href="/"></a>
+    <img class="logo-img" src="fkjezero.png" alt="Logo FKJezero" width="100" height="95">
+  </a>
+
+  <span id="span-text">FK JEZERO <br> PLAV</span>
+
+  <a class="item" href="/about">O nama</a>
+  <a class="item" href="/shop">Web shop</a>
+  <a class="item" href="/history">Istorija</a>
+  <a class="item" href="/news">Vijesti</a>
+  <a class="item" href="/team">Tim</a>
+  <a class="item" href="/" >Početna</a>
+
+    
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+
+</div>
+
+</header>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+const elem = document.getElementsByClassName("item");
+const href = (window.location.href).toString();
+
+   if(href.includes("about")){
+       for(let i=0; i<elem.length; i++){
+          elem[i].classList.remove("active");
+       }
+       elem[0].classList.add("active");
+   }else if(href.includes("shop")){
+       for(let i=0; i<elem.length; i++){
+          elem[i].classList.remove("active");
+       }
+       elem[1].classList.add("active");
+   }else if(href.includes("history")){
+       for(let i=0; i<elem.length; i++){
+          elem[i].classList.remove("active");
+       }
+       elem[2].classList.add("active");
+   }else if(href.includes("news")){
+       for(let i=0; i<elem.length; i++){
+          elem[i].classList.remove("active");
+       }
+       elem[3].classList.add("active");
+   }else if(href.includes("team")){
+       for(let i=0; i<elem.length; i++){
+          elem[i].classList.remove("active");
+       }
+       elem[4].classList.add("active");
+   }else {
+      for(let i=0; i<elem.length; i++){
+          elem[i].classList.remove("active");
+       }
+       elem[5].classList.add("active");
+   }
+
+const logo = document.getElementsByClassName("logo-img");
+
+logo[0].addEventListener("click", takeMeToHome);
+
+function takeMeToHome() {
+   url = href.slice(0, 22);
+   //console.log(url);
+   location.replace(url);
+}
+</script>

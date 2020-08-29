@@ -1,0 +1,172 @@
+<head>
+    <title>Tim</title>
+    <link rel="stylesheet" href="/css/playerCard.css">
+</head>
+
+<%- include ('partials/header') %>
+<br><br>
+<p class="filter container ">Napad</p>
+
+<div class="container main-container" >
+
+<% for(let i=0; i<player.length; i++){ %>
+    <% if(player[i].position === "Attack"){%>
+        <% const temp = player[i].name; %>
+        <% const fname = temp.split(" "); %>
+<div class="container my-container"> 
+
+   <img src="/images/maketa.jpg" width="180" height="240" class="my-img">
+   <p class="n-player"><%= player[i].number %></p>
+   <p class="p-player"><%= fname[0] %></p>
+   <p class="p2-player"><%= fname[1] %></p>
+
+   <div class="overlay">
+    <p class="my-text">Godine: <%= player[i].age %><br>
+    Utakmice: <%= player[i].games %><br>
+    Golovi: <%= player[i].goals %><br>
+    Crveni: <%= player[i].redCartons %><br>
+    Žuti: <%= player[i].yellowCartons %></p>
+   </div>
+
+</div>
+<%  }  }  %>
+</div>
+
+<div class="my-border"></div>
+<br>
+
+<p class="filter container ">Vezni red</p>
+
+<div class="container main-container" >
+
+<% for(let i=0; i<player.length; i++){ %>
+    <% if(player[i].position === "Middle"){%>
+        <% const temp = player[i].name; %>
+        <% const fname = temp.split(" "); %>
+    <div class="container my-container"> 
+    
+       <img src="/images/maketa.jpg" width="180" height="240" class="my-img">
+       <p class="n-player"><%= player[i].number %></p>
+       <p class="p-player"><%= fname[0] %></p>
+       <p class="p2-player"><%= fname[1] %></p>
+    
+       <div class="overlay">
+        <p class="my-text">Godine: <%= player[i].age %><br>
+        Utakmice: <%= player[i].games %><br>
+        Golovi: <%= player[i].goals %><br>
+        Crveni: <%= player[i].redCartons %><br>
+        Žuti: <%= player[i].yellowCartons %></p>
+       </div>
+
+    </div>
+<%  }  }  %>
+</div>
+
+<div class="my-border"></div>
+<br>
+
+<p class="filter container ">Odbrana</p>
+
+<div class="container main-container" >
+
+<% for(let i=0; i<player.length; i++){ %>
+    <% if(player[i].position === "Defend"){%>
+        <% const temp = player[i].name; %>
+        <% const fname = temp.split(" "); %>
+    <div class="container my-container"> 
+    
+       <img src="/images/maketa.jpg" width="180" height="240" class="my-img">
+       <p class="n-player"><%= player[i].number %></p>
+       <p class="p-player"><%= fname[0] %></p>
+       <p class="p2-player"><%= fname[1] %></p>
+    
+       <div class="overlay">
+        <p class="my-text">Godine: <%= player[i].age %><br>
+        Utakmice: <%= player[i].games %><br>
+        Golovi: <%= player[i].goals %><br>
+        Crveni: <%= player[i].redCartons %><br>
+        Žuti: <%= player[i].yellowCartons %></p>
+       </div>
+
+    </div>
+<%  }  }  %>
+</div>
+
+<div class="my-border"></div>
+<br>
+
+<p class="filter container ">Golmani</p>
+
+<div class="container main-container" >
+
+<% for(let i=0; i<player.length; i++){ %>
+    <% if(player[i].position === "Goalkeeper"){%>
+        <% const temp = player[i].name; %>
+        <% const fname = temp.split(" "); %>
+    <div class="container my-container"> 
+    
+       <img src="/images/maketa.jpg" width="180" height="240" class="my-img">
+       <p class="n-player"><%= player[i].number %></p>
+       <p class="p-player"><%= fname[0] %></p>
+       <p class="p2-player"><%= fname[1] %></p>
+
+
+       <div class="overlay">
+        <p class="my-text">Godine: <%= player[i].age %><br>
+        Utakmice: <%= player[i].games %><br>
+        Golovi: <%= player[i].goals %><br>
+        Crveni: <%= player[i].redCartons %><br>
+        Žuti: <%= player[i].yellowCartons %></p>
+       </div>
+    
+    </div>
+<%  }  }  %>
+</div>
+
+<div class="my-border"></div>
+<br>
+
+<p class="filter container ">Treneri</p>
+
+<div class="container main-container" >
+
+
+<% for(let i=0; i<player.length; i++){ %>
+    <% if(player[i].position === "Coach"){%>
+        <% const temp = player[i].name; %>
+        <% const fname = temp.split(" "); %>
+    <div class="container my-container"> 
+    
+       <img src="/images/maketa.jpg" width="180" height="240" class="my-img">
+       <p class="p-player"><%= fname[0] %></p>
+       <p class="p2-player"><%= fname[1] %></p>
+    
+    </div>
+<%  }  }  %>
+</div>
+
+<div class="my-border"></div>
+<br>
+
+<p class="filter container ">Štručni štab</p>
+
+<div class="container main-container" >
+
+<% for(let i=0; i<player.length; i++){ %>
+    <% if(player[i].position === "Staff"){%>
+        <% const temp = player[i].name; %>
+        <% const fname = temp.split(" "); %>
+    <div class="container my-container"> 
+    
+       <img src="/images/maketa.jpg" width="180" height="240" class="my-img">
+       <p class="p-player"><%= fname[0] %></p>
+       <p class="p2-player"><%= fname[1] %></p>
+    
+    </div>
+<%  }  }  %>
+</div>
+
+<div class="my-border"></div>
+<br>
+
+<%- include ('partials/footer') %>
