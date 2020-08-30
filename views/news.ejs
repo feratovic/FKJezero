@@ -1,1 +1,11 @@
+<head>
+    <title>Vijesti</title>
+    <link rel="stylesheet" href="/css/news.css">
+</head>
+
 <%- include ('partials/header') %>
+
+<% for(let i=0; i<news.length; i++){ %>
+    <%= news[i].name %>
+    <%= news[i].description %>
+<% } %>

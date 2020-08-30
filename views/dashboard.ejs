@@ -127,7 +127,7 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger"  formaction="/users/dashboard" data-dismiss="modal">Close</button>
         </div>
         
       </div>
@@ -136,13 +136,15 @@
 
 <!-- ADD NEWS -->
 
-<!-- Button ADD PLAYER -->
-<button type="button" class="btn bg-warning text-white" data-toggle="modal" data-target="#myModal">
+
+
+<!-- Button ADD NEWS -->
+<button type="button" class="btn bg-warning text-white" data-toggle="modal" data-target="#myModal2">
   Add news
 </button>
 
-<!-- The Modal  ADD PLAYER-->
-<div class="modal fade" id="myModal">
+<!-- The Modal  ADD NEWS-->
+<div class="modal fade" id="myModal2">
   <div class="modal-dialog">
     <div class="modal-content">
     
@@ -166,6 +168,12 @@
               class="form-control"
               placeholder="Enter Name"
             />
+          </div>
+
+          
+          <div class="form-group">
+            <label for="description">Example textarea</label>
+            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
           </div>
 
            

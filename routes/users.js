@@ -100,10 +100,11 @@ router.post('/login', (req, res, next) => {
 });
  
 
-router.post('/dashboard', (req, res) => {
-      console.log(req.body);
+router.post('/dashboard',(req, res) => {
+      console.log(req.body.name);
 
-      if(req.body.name != ''){
+
+      if(req.body.name){
       const newPlayer = new Player({
             name: req.body.name,
             position: req.body.position,
@@ -116,13 +117,59 @@ router.post('/dashboard', (req, res) => {
       });
 
       newPlayer.save()
-      .then(player => {
+               .then(player => {
             req.flash('success_msg', 'You added new player');
             res.redirect('/dashboard');
-      })
-      .catch(err => console.log(err));
+            })
+               .catch(err => console.log(err));
       }
+
+      if(req.body.nameNews){
+           // console.log(req.body.description);
       
+      let value = 0;
+      News.countDocuments( {}, function(err, result){
+
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log(result)
+            value = result;
+        }
+
+      })
+      .then(value => {
+            const newNews = new News({
+                  name: req.body.nameNews,
+                  description: req.body.description,
+                  url: `${req.body.nameNews}/${value}`
+              });
+
+              newNews.save()
+              .then(news => {
+                   req.flash('success_msg', 'You added new news');
+                   res.redirect('/dashboard');
+             })
+             .catch(err => console.log(err));
+       
+ 
+      })
+      
+      
+     /* const newNews = new News({
+          name: req.body.nameNews,
+          description: req.body.description,
+          url: `${req.body.nameNews}/${value}`
+      });
+      
+      newNews.save()
+             .then(news => {
+                  req.flash('success_msg', 'You added new news');
+                  res.redirect('/dashboard');
+            })
+            .catch(err => console.log(err));*/
+      }
 });
 
 //Logout Handle

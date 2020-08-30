@@ -3,6 +3,7 @@ const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 
 const Player = require('../models/Players');
+const News = require('../models/News');
 
 
 //Home page
@@ -39,7 +40,13 @@ router.get('/shop', (req, res) =>
 
 //News page
 router.get('/news', (req, res) => 
-      res.render('news')
+      News.find()
+          .then( results => {
+            res.render('news',
+            {
+                  news: results
+            })
+          })      
 );
 
 module.exports = router;

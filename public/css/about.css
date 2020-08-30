@@ -1,0 +1,58 @@
+body{
+    background-color: #eeeeee;
+}
+.container{
+    text-align: center;
+}
+
+#h1-fkj{
+    padding:15px;
+}
+
+.my-img-container{
+   border-radius: 10px;
+}
+
+#my-p{
+    margin-top: 40px;
+}
+
+.my-container-dress > div{
+   object-fit: contain;
+}
+
+.my-container-dress{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   color: white;
+}
+
+.my-main-container-dress{
+    margin-top: 30px;
+    border-radius: 10px;
+    background: rgb(92,174,244);
+    background: linear-gradient(90deg, rgba(92,174,244,1) 0%, rgba(54,119,196,1) 37%, rgba(17,40,184,1) 100%);
+}
+
+
+.my-main-container-dress > h5{
+    padding:10px
+}
+
+
+.my-main-container-dress > img{
+    overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    .my-img-container{
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }   
+
+    .my-container-dress{
+        flex-direction: column;
+     }
+  }
