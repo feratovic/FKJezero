@@ -1,2 +1,183 @@
-<title>Početna</title>
+<head>
+    <title>Početna</title>
+    <link rel="stylesheet" href="/css/home.css">
+
+
+</head>
+
 <%- include ('partials/header') %>
+
+<main class="row">
+    <div class="col-sm-7" id="newsDiv">
+        
+       <div id="mainNews" >
+            <img src="<%= news[0].imgUrl %>" alt="Glavna slika">
+            <div class="bottom-left"><h3>
+              <form action="/" method="POST">
+    
+                <input 
+                  type="text"
+                  id="newsUrl"
+                  name="newsUrl"
+                  class="my-form-control"
+                  value="<%= news[0].url%>"
+                  placeholder="Enter Name"
+                />
+            
+              <button type="submit" class="read-more-main"><%= news[0].name %></button>
+            </form></h3></div>
+            
+           
+       </div>
+       
+
+       <div class="sideNews">
+            <img src="<%= news[1].imgUrl %>">
+            <div class="sideDiv-text"><h3> 
+              <form action="/" method="POST">
+    
+              <input 
+                type="text"
+                id="newsUrl"
+                name="newsUrl"
+                class="my-form-control"
+                value="<%= news[1].url%>"
+                placeholder="Enter Name"
+              />
+          
+            <button type="submit" class="read-more"><%= news[1].name %></button>
+          </form></h3>
+              
+           </div>
+       </div>
+       
+      
+       <div class="sideNews">
+            <img src="<%= news[2].imgUrl %>">
+            <div class="sideDiv-text"><h3>
+              <form action="/" method="POST">
+    
+                <input 
+                  type="text"
+                  id="newsUrl"
+                  name="newsUrl"
+                  class="my-form-control"
+                  value="<%= news[2].url%>"
+                  placeholder="Enter Name"
+                />
+            
+              <button type="submit" class="read-more"><%= news[2].name %></button>
+            </form>
+            </h3>
+              
+           </div>
+       </div>
+       
+
+       <div class="sideNews">
+            <img src="<%= news[3].imgUrl %>">
+            <div class="sideDiv-text"><h3>
+              <form action="/" method="POST">
+    
+                <input 
+                  type="text"
+                  id="newsUrl"
+                  name="newsUrl"
+                  class="my-form-control"
+                  value="<%= news[3].url%>"
+                  placeholder="Enter Name"
+                />
+            
+              <button type="submit" class="read-more"><%= news[3].name %></button>
+            </form> 
+            </h3>
+              
+          </div>
+       </div>
+       <a href="/news">Jos Clanaka</a>
+    </div>
+    
+    <div class="col-sm-4" id="sideDiv">
+
+        <div id="up-sideDiv">
+         <h4 style="color:white;font-size:25px"><%= game.date %></h4>
+         <h4 style="color:rgb(185, 185, 185);font-size:18px"><%= game.league %></h4>
+         <h4 style="color:white;font-size:28px"><%= game.home %> <%= game.guest %></h4>
+        </div>
+        <br>
+        <div id="down-sideDiv">
+             
+          <h3>Telekom 1. CFL</h3>
+          <table id="table">
+               <tr>
+                    <th>#</th>
+                    <th style="border-right: 2px solid black;">Tim</th>
+                    <th>UT.</th>
+                    <th>POB.</th>
+                    <th>NER.</th>
+                    <th>POR.</th>
+                    <th>G+</th>
+                    <th>G-</th>
+                    <th>GR</th>
+                    <th  style="border-left: 2px solid black;">BOD.</th>
+               </tr>
+              <% for(let j=0; j<data.length; j++){ %>
+               <tr style="border-bottom: 2px solid black;">
+                   <td style="color: white;background-color: rgb(211, 211, 211);border-bottom:none;"><%= data[j].rank %></td>
+                   <td style="border-right: 2px solid black;"><%= data[j].name %></td>
+                   <td><%= data[j].matches %></td>
+                   <td><%= data[j].win %></td>
+                   <td><%= data[j].draw %></td>
+                   <td><%= data[j].lose %></td>
+                   <td><%= data[j].gpls %></td>
+                   <td><%= data[j].gmin %></td>
+                   <td><%= data[j].gr %></td>
+                   <td  style="border-left: 2px solid black;"><%= data[j].bodovi %></td>
+               </tr>
+               <% } %>
+          </table>
+        </div>
+    </div>
+
+
+</main>
+
+<div id="sponsors">
+  <h3>Sponzori</h3>
+
+  <div class="col-sm-2 spDiv">
+     <h3>OPSTINA PLAV</h3>
+     <img src="images/logoPlav.png">
+  </div>
+  <div class="col-sm-2 spDiv">
+    <h3>OPSTINA PLAV</h3>
+    <img src="images/logoPlav.png">  </div>
+  <div class="col-sm-2 spDiv">
+    <h3>OPSTINA PLAV</h3>
+    <img src="images/logoPlav.png">  </div>
+  <div class="col-sm-2 spDiv">
+    <h3>OPSTINA PLAV</h3>
+    <img src="images/logoPlav.png">  </div>
+
+</div>
+
+<br><br>
+
+<script>
+     let table = document.getElementById("table").rows;
+     table[1].cells[0].style.backgroundColor = "#03254c";
+     table[2].cells[0].style.backgroundColor = "#1167b1";
+     table[3].cells[0].style.backgroundColor = "#1167b1";
+     table[9].cells[0].style.backgroundColor = "#A91B0D";
+     table[10].cells[0].style.backgroundColor = "#A91B0D";
+
+     for(let i = 0; i<table.length; i++){
+          if(table[i].cells[1].innerHTML === "Jezero"){
+               for(let j = 1; j<table[i].cells.length; j++){
+               table[i].cells[j].style.backgroundColor = "rgb(92,174,244)";
+               }
+          }
+     }
+</script>
+
+<%- include ('partials/footer') %>

@@ -21,7 +21,7 @@
         <!-- Modal body -->
         <div class="modal-body">
           
-        <form action="/users/dashboard" method="POST">
+        <form action="/users/dashboard" method="POST" enctype="multipart/form-data">
 
             <div class="form-group">
               <label for="name">Name</label>
@@ -34,6 +34,14 @@
               />
             </div>
 
+
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input name="myImage" type="file">
+              </div>
+            </div>
+           
             <div class="form-group">
                 <label for="position">Position</label><br>
                 <select name="position" id="position exampleFormControlSelect1" class="form-control">
@@ -120,7 +128,7 @@
              </div>
             </div>
              <br><br>
-            <button type="submit" class="btn btn-primary btn-block">Add</button>
+            <button type="submit"  class="btn btn-primary btn-block">Add</button>
           </form>
 
         </div>
@@ -157,7 +165,7 @@
       <!-- Modal body -->
       <div class="modal-body">
         
-      <form action="/users/dashboard" method="POST">
+      <form action="/users/dashboard" method="POST" enctype="multipart/form-data">
 
           <div class="form-group">
             <label for="nameNews">Name</label>
@@ -171,13 +179,21 @@
           </div>
 
           
+          <div class="file-field input-field">
+            <div class="btn grey">
+              <span>File</span>
+              <input name="myImage" type="file">
+            </div>
+          </div>
+
+          
           <div class="form-group">
             <label for="description">Example textarea</label>
             <textarea class="form-control" id="description" rows="3" name="description"></textarea>
           </div>
 
            
-          <button type="submit" class="btn btn-primary btn-block">Add</button>
+          <button type="submit"  class="btn btn-primary btn-block">Add</button>
         </form>
 
       </div>

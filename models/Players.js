@@ -5,31 +5,34 @@ const PlayerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    imgUrl: {
+        type: String
+    },
     position: {
         type: String,
         required: true
     },
     number: {
-         type: Number,
+        type: String,
     },
     age: {
-        type: Number,
+        type: String,
         required: true
     },
     games: {
-        type: Number,
+        type: String,
         default: 0
     },
     goals: {
-        type: Number,
+        type: String,
         default: 0
     },
     redCartons: {
-        type: Number,
+        type: String,
         default: 0
     },
     yellowCartons: {
-        type: Number,
+        type: String,
         default: 0
     },
     date: {

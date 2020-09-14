@@ -1,11 +1,113 @@
+
 <head>
-    <title>Vijesti</title>
-    <link rel="stylesheet" href="/css/news.css">
+  <title>Vijesti</title>
+  <link rel="stylesheet" href="/css/news.css">
 </head>
 
 <%- include ('partials/header') %>
 
-<% for(let i=0; i<news.length; i++){ %>
-    <%= news[i].name %>
-    <%= news[i].description %>
+<div class="container" id="news-container">
+
+<form action="/news" method="POST" id="my-form">
+
+  <input
+    type="text"
+    id="search"
+    name="search"
+    class="form-control"
+    placeholder="Unesi ime clanka"
+  />
+
+<button type="submit"   class="btn btn-dark">Trazi</button>
+</form>
+
+<% let i = 0; %>
+<% if( news.length == 0) { %>
+  <div id="error-div">
+    <h2>NIJE PRONADJEN NIJEDAN REZULTAT</h2>
+  </div>
+    
+<% } %>  
+<% if(news.length > 0) { %>
+<% for(i=0; i<news.length; i++){ %>
+
+<div class="my-newsDiv">
+
+
+<div class="text-img-container">
+  <img src=  "<%= news[i].imgUrl %>" alt="Snow">
+  <div class="top-left"><h3>
+    <form action="/news" method="POST">
+
+    <input 
+      type="text"
+      id="newsUrl"
+      name="newsUrl"
+      class="my-form-control"
+      value="<%= news[i].url%>"
+      placeholder="Enter Name"
+    />
+
+  <button type="submit" class="read-more"><%= news[i].name %></button>
+</form></h3></div>
+
+</div>
+
+
+
+</div>
+
+
+
+<% }} %>
+<% if( news.length > 3) { %>
+  <% for(j=3; j<news.length; j++){ %>
+
+    <div class="my-newsDiv inactive">
+    
+    
+    <div class="text-img-container">
+      <img src=  "<%= news[j].imgUrl %>" alt="Snow">
+      <div class="top-left"><h3>
+        <form action="/news" method="POST">
+    
+          <input 
+            type="text"
+            id="newsUrl"
+            name="newsUrl"
+            class="my-form-control"
+            value="<%= news[j].url%>"
+            placeholder="Enter Name"
+          />
+      
+        <button type="submit" class="read-more"><%= news[j].name %></button>
+      </form>
+      </h3></div>
+    
+    </div>
+    
+
+    
+    </div>
+    <div id="load-more">Ucitaj jos</div>
+
 <% } %>
+<% } %>
+
+</div>
+<br><br>
+
+<script>
+  let btn  = document.getElementById("load-more");
+  let div = document.getElementsByClassName("inactive");
+
+  btn.addEventListener('click', load);
+
+  function load() {
+    for(let k = 0; k < div.length; k++){
+      div[k].style.display = "block";
+    }
+    btn.style.display = "none";
+  }
+</script>
+<%- include ('partials/footer') %>

@@ -9,6 +9,9 @@ const NewsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    imgUrl: {
+        type: String
+    },
     url: {
         type: String,
         required: true

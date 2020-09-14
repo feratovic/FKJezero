@@ -4,27 +4,30 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require("passport");
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(express.static('public'));
-
 
 require('dotenv').config()
 
 //Passport congif
 require('./config/passport')(passport);
 
+
+
 //DB Config
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true})
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => console.log('MongoDB connected'))
         .catch(err => console.log(err));
+
 //EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
-
 //Bodyparser
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Express Session
 app.use(session({
@@ -32,6 +35,8 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+
 
 //Passport middleware
 app.use(passport.initialize());

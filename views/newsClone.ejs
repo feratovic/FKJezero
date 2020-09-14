@@ -1,0 +1,51 @@
+<head>
+    <title>Vijesti</title>
+    <link rel="stylesheet" href="/css/newsClone.css">
+    <!-- You can use Open Graph tags to customize link previews.
+Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+<meta property="og:url"           content="http://localhost:5050/news/newsClone/2" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="FK JEZERO" />
+<meta property="og:description"   content="Novosti" />
+<meta property="og:image"         content="http://localhost:5050/imagesDB/photo-1508138221679-760a23a2285b.jpg" />
+</head>
+
+<%- include ('partials/header') %>
+
+<div  class="container" style="padding: 10px;">
+<% for(let i=0; i<news.length; i++){ %>
+
+<h1 id="newsHead"> <%= news[i].name %> </h1>
+<div class="img-container">
+    <img src="../../<%= news[i].imgUrl %>">
+</div>
+
+<p id="newsText">
+   <%= news[i].description %>
+</p>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your share button code -->
+<div class="fb-share-button" 
+data-href="http://localhost:5050/news/newsClone/2" 
+data-layout="button_count">
+</div>
+<% } %>
+</div>
+
+<script>
+    let img = document.getElementsByClassName("logo-img");
+    img[0].src = '../../images/fkjezero.png';
+</script>
+
+<%- include ('partials/footer') %>
