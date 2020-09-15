@@ -100,18 +100,19 @@
     <div class="col-sm-4" id="sideDiv">
 
         <div id="up-sideDiv">
-         <h4 style="color:white;font-size:25px"><%= game.date %></h4>
+         <h4 style="color:white;font-size:25px"><%= (game.date).substring(0, 10) %></h4>
+         <h4 style="color:white;font-size:25px"><%= (game.date).substring(11, 16) %></h4>
          <h4 style="color:rgb(185, 185, 185);font-size:18px"><%= game.league %></h4>
-         <h4 style="color:white;font-size:28px"><%= game.home %> <%= game.guest %></h4>
+         <h4 id="gameTeams"><%= game.home %> <%= game.guest %></h4>
         </div>
         <br>
         <div id="down-sideDiv">
              
-          <h3>Telekom 1. CFL</h3>
+          <h3>Tabela - Telekom 1. CFL</h3>
           <table id="table">
                <tr>
                     <th>#</th>
-                    <th style="border-right: 2px solid black;">Tim</th>
+                    <th>Tim</th>
                     <th>UT.</th>
                     <th>POB.</th>
                     <th>NER.</th>
@@ -119,12 +120,12 @@
                     <th>G+</th>
                     <th>G-</th>
                     <th>GR</th>
-                    <th  style="border-left: 2px solid black;">BOD.</th>
+                    <th >BOD.</th>
                </tr>
               <% for(let j=0; j<data.length; j++){ %>
-               <tr style="border-bottom: 2px solid black;">
-                   <td style="color: white;background-color: rgb(211, 211, 211);border-bottom:none;"><%= data[j].rank %></td>
-                   <td style="border-right: 2px solid black;"><%= data[j].name %></td>
+               <tr >
+                   <td class="myRank"><%= data[j].rank %></td>
+                   <td ><%= data[j].name %></td>
                    <td><%= data[j].matches %></td>
                    <td><%= data[j].win %></td>
                    <td><%= data[j].draw %></td>
@@ -132,7 +133,7 @@
                    <td><%= data[j].gpls %></td>
                    <td><%= data[j].gmin %></td>
                    <td><%= data[j].gr %></td>
-                   <td  style="border-left: 2px solid black;"><%= data[j].bodovi %></td>
+                   <td  style="color: black;"><%= data[j].bodovi %></td>
                </tr>
                <% } %>
           </table>
@@ -165,17 +166,20 @@
 
 <script>
      let table = document.getElementById("table").rows;
-     table[1].cells[0].style.backgroundColor = "#03254c";
-     table[2].cells[0].style.backgroundColor = "#1167b1";
-     table[3].cells[0].style.backgroundColor = "#1167b1";
-     table[9].cells[0].style.backgroundColor = "#A91B0D";
-     table[10].cells[0].style.backgroundColor = "#A91B0D";
+     table[1].cells[0].style.backgroundColor = "#0f4c75";
+     table[2].cells[0].style.backgroundColor = "#3282b8";
+     table[3].cells[0].style.backgroundColor = "#3282b8";
+     table[9].cells[0].style.backgroundColor = "#ff1e56";
+     table[10].cells[0].style.backgroundColor = "#ff1e56";
 
      for(let i = 0; i<table.length; i++){
           if(table[i].cells[1].innerHTML === "Jezero"){
-               for(let j = 1; j<table[i].cells.length; j++){
-               table[i].cells[j].style.backgroundColor = "rgb(92,174,244)";
-               }
+               for(let j = 0; j<table[i].cells.length; j++){
+               let temp = table[i].cells[j].style;
+               temp.backgroundColor = "#0f4c75";
+               temp.color = "white";
+              }
+              
           }
      }
 </script>

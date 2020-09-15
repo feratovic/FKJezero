@@ -68,31 +68,57 @@ main{
    padding-bottom: 100px;
    border-radius: 5px;
    background: rgb(92,174,244);
-   background: linear-gradient(90deg, rgba(92,174,244,1) 0%, rgba(54,119,196,1) 37%, rgba(17,40,184,1) 100%);
+   background-image: url("https://www.pngjoy.com/pngl/68/1478774_technology-background-creative-background-design-png-hd-png.png");
+   -webkit-box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
+   -moz-box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
+    box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
 }
 
 #up-sideDiv > h4 {
     padding: 5px;
 }
 
-#down-sideDiv{
-    border-radius: 5px;
-    padding: 15px;
-    background-color: white;
+#gameTeams{
+    color:white;
+    font-size:28px;
+    border-top: 5px solid rgba(0, 0, 0, 0.425);
 }
 
+#down-sideDiv{
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    background-image: url("https://i.pinimg.com/originals/23/a7/67/23a76716eccb4250384ec9a5056dafd3.jpg");
+}
+
+table{
+   border-collapse: collapse;
+}
+
+td:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.349);
+}
 
 th{
-    background-color: rgb(214, 214, 214);
-    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.349);
     padding-left: 5px;  
+    color: rgb(0, 0, 0);
+    -webkit-box-shadow: 0px 5px 15px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 15px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 15px -4px rgba(0,0,0,0.75);
 }
 
 td{
     padding: 4px;
     padding-left: 10px;  
-
 }
+
+
+.myRank{
+    background-color: rgba(255, 255, 255, 0.349);
+    color: rgb(0, 0, 0);
+}
+
 
 #newsUrl{
     display: none;
@@ -119,4 +145,10 @@ td{
 
 .spDiv{
     display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    table{
+       font-size: 9px;
+    }
 }

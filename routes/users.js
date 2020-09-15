@@ -205,6 +205,29 @@ router.post('/dashboard', (req, res) => {
             }
           });
      
+          if(req.body.plyName){
+            Player.deleteOne({ name : req.body.plyName }, function(err) {
+                  if (!err) {
+                        req.flash('success_msg', 'Player deleted');
+                        res.redirect('/dashboard');                 
+                  }else {
+                        req.flash('error_msg', 'Error');
+                        res.redirect('/dashboard');   
+                  }
+              });
+          }
+
+          if(req.body.newsNm){
+            News.deleteOne({ name : req.body.newsNm }, function(err) {
+                  if (!err) {
+                        req.flash('success_msg', 'News deleted');
+                        res.redirect('/dashboard');                 
+                  }else {
+                        req.flash('error_msg', 'Error');
+                        res.redirect('/dashboard');   
+                  }
+              });
+          }
 });
 
 

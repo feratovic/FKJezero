@@ -1,3 +1,4 @@
+<div class="container">
 <h1 class="mt-4">Dashboard</h1>
 <p class="lead mb-3">Welcome <%= name %></p>
 <%- include ('partials/messages') %>
@@ -208,3 +209,74 @@
 </div>
 
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
+<br>
+
+<div class="row" style="margin-top: 50px">
+  <table class="col-sm-4 table" > 
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Broj</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(let k = 0; k<player.length; k++) { %>
+    <tr>
+      <th scope="row"><%= k+1 %></th>
+      <td><%= player[k].name %> </td>
+      <td><%= player[k].number %> </td>
+      <td><form action="/users/dashboard" method="POST">
+    
+        <input 
+          type="text"
+          id="newsUrl"
+          name="plyName"
+          class="my-form-control"
+          style="display: none;"
+          value="<%= player[k].name %>"
+          placeholder="Enter Name"
+        />
+    
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form> </td>
+    </tr>
+    <% } %>
+  </tbody>
+  </table>
+
+  <table class="col-sm-5 table" style="margin-left: 10%;" > 
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let k = 0; k<news.length; k++) { %>
+    <tr>
+      <th scope="row"><%= k+1 %></th>
+      <td><%= news[k].name %> </td>
+      <td><form action="/users/dashboard" method="POST">
+    
+        <input 
+          type="text"
+          id="newsUrl"
+          name="newsNm"
+          class="my-form-control"
+          style="display: none;"
+          value="<%= news[k].name %>"
+          placeholder="Enter Name"
+        />
+    
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form> </td>
+
+    </tr>
+    <% } %>
+  </tbody>
+  </table>
+</div>
+</div>
