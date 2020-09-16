@@ -127,7 +127,7 @@ router.use('/news', (req, res) => {
             
           
             if(req.body.search){
-          
+            
                   var search = req.body.search;
                   News.find({ name: {$regex : `${search}`, $options: 'i'} })
                         .then( results => {
@@ -145,6 +145,8 @@ router.use('/news', (req, res) => {
                   /* save nom to database */
                   res.redirect('/news/' + url);
 
+            }else{
+                  res.redirect('/news');
             }
       }
 });

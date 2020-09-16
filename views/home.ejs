@@ -94,21 +94,33 @@
               
           </div>
        </div>
-       <a href="/news">Jos Clanaka</a>
+       <a href="/news" id="moreArticles">Jos Clanaka</a>
     </div>
     
     <div class="col-sm-4" id="sideDiv">
 
         <div id="up-sideDiv">
-         <h4 style="color:white;font-size:25px"><%= (game.date).substring(0, 10) %></h4>
-         <h4 style="color:white;font-size:25px"><%= (game.date).substring(11, 16) %></h4>
-         <h4 style="color:rgb(185, 185, 185);font-size:18px"><%= game.league %></h4>
-         <h4 id="gameTeams"><%= game.home %> <%= game.guest %></h4>
+
+          <div id="teamsLogo">
+            <div id="homeTeam"><img src="images/fkjezero.png" alt="<%= game.home %>">
+             <h5><%= game.home %></h5>
+            </div>
+          <h2 id="vs">VS</h2>
+            <div id="guestTeam"><img src="images/fkjezero.png" alt="<%= game.guest %>">
+             <h5 stl><%= game.guest %></h5>
+            </div>
+           </div>
+           <br><br>
+
+         <h4 style="font-size: 20px;color: black;" ><%= (game.date).substring(0, 10) %></h4>
+         <h4 style="font-size: 25px;color: black;" ><%= (game.date).substring(11, 16) %></h4>
+         <h4 style="font-size: 15px;"><%= game.league %></h4>
+         
         </div>
         <br>
         <div id="down-sideDiv">
              
-          <h3>Tabela - Telekom 1. CFL</h3>
+          <h3 style="color:black;">Tabela - Telekom 1. CFL</h3>
           <table id="table">
                <tr>
                     <th>#</th>
@@ -144,22 +156,23 @@
 </main>
 
 <div id="sponsors">
-  <h3>Sponzori</h3>
+  <h2 style="color: black;">Sponzori</h2>
 
-  <div class="col-sm-2 spDiv">
-     <h3>OPSTINA PLAV</h3>
+ <div id="main-spDiv">
+
+  <div class=" spDiv">
      <img src="images/logoPlav.png">
   </div>
-  <div class="col-sm-2 spDiv">
-    <h3>OPSTINA PLAV</h3>
-    <img src="images/logoPlav.png">  </div>
-  <div class="col-sm-2 spDiv">
-    <h3>OPSTINA PLAV</h3>
-    <img src="images/logoPlav.png">  </div>
-  <div class="col-sm-2 spDiv">
-    <h3>OPSTINA PLAV</h3>
-    <img src="images/logoPlav.png">  </div>
 
+  <div class=" spDiv">
+    <img src="images/elan.jpg">  </div>
+
+  <div class=" spDiv">
+    <img src="images/fscg.png">  </div>
+    
+  <div class=" spDiv">
+    <img src="images/logoPlav.png">  </div>
+  </div>
 </div>
 
 <br><br>
@@ -182,6 +195,18 @@
               
           }
      }
+
+     let home = document.getElementById("homeTeam").getElementsByTagName("img");
+     let guest = document.getElementById("guestTeam").getElementsByTagName("img");
+     let nameGuest = guest[0].alt.toString();
+     let nameHome = home[0].alt.toString();
+
+     console.log(nameHome);
+     guest[0].src = "/images/" + nameGuest.substring(1, nameGuest.length) + ".png";
+     home[0].src = "/images/" + nameHome.substring(0, nameHome.length-1) + ".png";
+
+
+
 </script>
 
 <%- include ('partials/footer') %>

@@ -9,8 +9,15 @@ body{
     padding:15px;
 }
 
+#divImg{
+    width: 100%;
+    height: 500px;
+}
+
 .my-img-container{
    border-radius: 10px;
+   width: 100%;
+   height: 100%;
 }
 
 #my-p{

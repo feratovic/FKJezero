@@ -9,6 +9,7 @@ body {
     border-bottom: 4px solid #eeeeee;
     background: rgb(92,174,244);
     background: linear-gradient(90deg, rgba(92,174,244,1) 0%, rgba(54,119,196,1) 37%, rgba(17,40,184,1) 100%);
+
   }
   
   .info{
