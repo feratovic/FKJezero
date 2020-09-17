@@ -4,11 +4,11 @@
 
     <!-- You can use Open Graph tags to customize link previews.
 Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-<meta property="og:url"           content="http://localhost:5050/news/newsClone/2" />
+<meta property="og:url"           content="https://fkjezero.herokuapp.com/news/<%= news[0].url %>" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="FK JEZERO" />
 <meta property="og:description"   content="Novosti" />
-<meta property="og:image"         content="http://localhost:5050/imagesDB/photo-1508138221679-760a23a2285b.jpg" />
+<meta property="og:image"         content="https://fkjezero.herokuapp.com/news/<%= news[0].imagesUrl%>" />
 </head>
 
 <%- include ('partials/header') %>
@@ -39,7 +39,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button" 
-data-href="http://localhost:5050/news/newsClone/2" 
+data-href="https://fkjezero.herokuapp.com/news/<%= news[0].url %>" 
 data-layout="button_count">
 </div>
 <% } %>
