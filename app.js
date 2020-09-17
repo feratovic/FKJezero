@@ -17,7 +17,7 @@ require('./config/passport')(passport);
 
 
 //DB Config
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_VAR || process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => console.log('MongoDB connected'))
         .catch(err => console.log(err));
 
