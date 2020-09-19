@@ -42,10 +42,12 @@ main{
 
 .sideNews{
     position: relative;
-    height: 140px;
+    height: 120px;
     color: rgb(0, 0, 0);
     object-fit: cover;
     padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.315);
+
 }
 
 .sideNews > img{
@@ -59,21 +61,31 @@ main{
    position: relative;
    left: 10px;
    top: 60px;
-   border-bottom: 5px solid rgba(0, 0, 0, 0.315);
-   border-bottom-left-radius: 5px;
-
 }
 
+
+
 #moreArticles{
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: 18px;
   float: right;
-  border-bottom: 5px solid rgb(53, 138, 212);
+}
+
+#moreArticles:after {
+    content: '»';
+    opacity: 0;  
+    float:right;
+    transition: 0.5s;
 }
 
 #moreArticles:hover{
     text-decoration: none;
     color:black;
-    border-color: black;
+}
+
+#moreArticles:hover:after {
+    opacity: 1;
+    padding-left: 5px;
 }
 
 #up-sideDiv{
@@ -83,7 +95,7 @@ main{
    padding-bottom: 20px;
    border-radius: 5px;
    background: rgb(207, 207, 207);
-   background-image: url("https://previews.123rf.com/images/31moonlight31/31moonlight311903/31moonlight31190300084/124529732-football-or-soccer-background-with-big-ball-in-gray-colors.jpg");
+   background-image: url("https://image.freepik.com/free-vector/low-poly-style-vs-versus-banner_1017-26141.jpg");
    background-position: center;
    background-size: cover;
    -webkit-box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
@@ -171,7 +183,6 @@ td{
 }
 
 .read-more-main{
-
   text-decoration: none;
   border: none;
   background-color: rgb(0, 0, 0);
@@ -185,15 +196,35 @@ td{
 .read-more{
     text-decoration: none;
     border: none;
+    
 }
 
+
+
+.read-more:after {
+    content: '»';
+    opacity: 0;  
+    position: absolute;
+    top: 0px;
+    transition: 0.5s;
+    right: 20px;
+}
+  
+
 .read-more:hover{
-    color: rgb(128, 128, 128);
+    color: rgb(53, 138, 212);
+    
+}
+
+
+.read-more:hover:after {
+    opacity: 1;
+    right: 10px;
 }
 
 #sponsors{
     text-align: center;
-    margin-top: 50px;
+    margin-top:  60px;
 }
 
 #main-spDiv{
@@ -204,18 +235,66 @@ td{
 }
 
 .spDiv{
-    width: 200px;
-    height: 200px;
-
+    width: 150px;
+    height: 180px;
+    
 }
 
-.spDiv > img{
+.spDiv > a > img{
     width: 100%;
     height: 100%;
 }
 
 @media screen and (max-width: 600px) {
+
+    body{
+        overflow-x: hidden;
+    }
     table{
-       font-size: 9px;
+        font-size: 2.5vw; 
+    }
+
+    #mainNews{
+        height: 250px;
+    }
+
+    .read-more-main{
+        font-size: 18px;
+    }
+    
+    .sideNews{
+        height: initial;
+    }
+
+    .sideNews > img{
+       width: 100%;
+    }
+
+    .sideDiv-text{
+        top:0;
+        left: 0;
+    }
+
+    .read-more{
+        font-size: 18px;
+    }
+     
+    #up-sideDiv{
+        margin-top: 20px;
+    }
+    #teamsLogo{
+        margin-left:0px;
+    }
+
+
+
+    #main-spDiv{
+        flex-direction: column;
+ 
+    }
+
+    .spDiv{
+        margin:auto;
+        margin-bottom: 15px;
     }
 }

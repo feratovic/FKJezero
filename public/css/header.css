@@ -109,6 +109,10 @@ body {
       width: 100%;
       margin-top: 0;
     }
+
+    .my-icons{
+      padding-right: 10px;
+    }
   }
   
   @media screen and (max-width: 600px) {
