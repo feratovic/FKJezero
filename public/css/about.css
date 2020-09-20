@@ -7,6 +7,7 @@ body{
 
 #h1-fkj{
     padding:15px;
+    color: black;
 }
 
 #divImg{
@@ -15,13 +16,14 @@ body{
 }
 
 .my-img-container{
-   border-radius: 10px;
+   border-radius: 5px;
    width: 100%;
    height: 100%;
 }
 
 #my-p{
     margin-top: 40px;
+    font-size: 20px;
 }
 
 .my-container-dress > div{
@@ -39,12 +41,15 @@ body{
     margin-top: 30px;
     border-radius: 10px;
     background: rgb(92,174,244);
-    background: linear-gradient(90deg, rgba(92,174,244,1) 0%, rgba(54,119,196,1) 37%, rgba(17,40,184,1) 100%);
+    background-image: url("https://i.pinimg.com/originals/23/a7/67/23a76716eccb4250384ec9a5056dafd3.jpg");
+    background-size: cover;
+    background-position: bottom;
 }
 
 
 .my-main-container-dress > h5{
-    padding:10px
+    padding:10px;
+    color: black;
 }
 
 
@@ -61,5 +66,18 @@ body{
 
     .my-container-dress{
         flex-direction: column;
-     }
-  }
+    }
+
+     #divImg{
+         height: 300px;
+    }
+
+    #my-p{
+        margin-top: 10px;
+    }
+
+    .my-main-container-dress{
+         height: 300px;
+    }
+
+}

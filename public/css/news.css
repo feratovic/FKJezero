@@ -58,15 +58,12 @@ body{
 #load-more{
     text-align: center;
     padding: 15px;
-
     width: 210px;
-    border-radius: 5px;
+    border-radius: 2px;
     margin: auto;
     margin-top: 50px;
-    background-color: white;
-    border: 7px solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    background-image: url("https://s3.envato.com/files/223757883/590Dark%20Blue%20Abstract%20Low%20Poly%20Background.jpg");
+    border: 7px solid #f6f6f6;
+    color: #f6f6f6;
     cursor: pointer;
 }
 
