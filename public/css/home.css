@@ -69,6 +69,11 @@ main{
   margin-top: 10px;
   font-size: 18px;
   float: right;
+  background: rgb(53, 138, 212);
+  border-radius: 2px;
+  color: white;
+  padding: 5px 10px 5px 10px;
+
 }
 
 #moreArticles:after {
@@ -80,7 +85,7 @@ main{
 
 #moreArticles:hover{
     text-decoration: none;
-    color:black;
+    color:white;
 }
 
 #moreArticles:hover:after {
@@ -93,16 +98,43 @@ main{
    text-align: center;
    padding-top: 40px;
    padding-bottom: 20px;
-   border-radius: 5px;
-   background: rgb(207, 207, 207);
-   background-image: url("https://wallpaperaccess.com/full/486695.jpg");
+   border-radius: 2px;
+   position: relative;
+   border: 1px solid rgb(153, 153, 153);
+
+   /*background-image: url("https://p7.hiclipart.com/preview/871/719/600/triangle-geometry-colorful-diamond-background-vector.jpg");
    background-position: center;
    background-size: cover;
+   overflow: hidden;
    -webkit-box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
    -moz-box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
-    box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);
+    box-shadow: 18px 26px 23px -20px rgba(0,0,0,0.57);*/
 }
 
+#up-sideDiv:after {
+    display: block;
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border-top: 10px solid rgb(53, 138, 212);
+    border-right: 10px solid rgb(53, 138, 212);
+    
+}
+
+#up-sideDiv:before {
+    display: block;
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    border-bottom: 10px solid rgb(236, 197, 65);
+    border-left: 10px solid rgb(236, 197, 65);
+}
 
 #gameTeams{
     color:white;
@@ -225,6 +257,14 @@ td{
 #sponsors{
     text-align: center;
     margin-top:  60px;
+    background-color: black;
+    z-index: 2;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    -webkit-filter: brightness(30%) grayscale(15%);
+    filter:  brightness(30%) grayscale(15%);
+    border-bottom: 1px solid grey;
+
 }
 
 #main-spDiv{
@@ -232,17 +272,19 @@ td{
     justify-content: center;
     justify-content: space-evenly;
     margin-top: 30px;
+    
+    
 }
 
 .spDiv{
     width: 150px;
     height: 180px;
-    
 }
 
 .spDiv > a > img{
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
