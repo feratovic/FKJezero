@@ -56,8 +56,10 @@ async function scrapVijesti(){
         console.log('Data Writen')
     });
 
-}
-
+}   
+   scrapVijesti();
+   console.log("scraper tabela finish");
+   
 });
 
 scrap.start();

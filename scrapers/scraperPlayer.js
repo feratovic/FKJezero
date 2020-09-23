@@ -51,6 +51,8 @@ async function scarpPlayer(){
     });
 
 }
-console.info('cron job completed');
+    scarpPlayer();
+    console.log("scraper player finish");
+
 });
 scrapPly.start();

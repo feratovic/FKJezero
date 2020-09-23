@@ -30,6 +30,9 @@ for(let i = 0; i < players.players.length; i++){
     .catch((err) => console.log(err))
 
 }
+
+console.log("scraper update finish");
+
 });
 
 update.start();

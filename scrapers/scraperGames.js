@@ -48,9 +48,11 @@ async function scarpGames(){
         console.log('Data Writen')
     });
 
-    return search;
-
+    //return search;
+   
 }
+    scarpGames();
+    console.log("scraper fixture finish");
 
 });
 
