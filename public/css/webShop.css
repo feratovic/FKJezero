@@ -24,6 +24,7 @@ body{
 @media screen and (max-width: 600px) {
     #web-shop{
         font-size: 60px;
-        margin-left: 37%;
+        margin-left: 45%;
+        margin-top: 160px;
     }
 }

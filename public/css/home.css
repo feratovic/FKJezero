@@ -100,7 +100,8 @@ main{
    padding-bottom: 20px;
    border-radius: 2px;
    position: relative;
-   border: 1px solid rgb(153, 153, 153);
+  
+   background: linear-gradient(30deg,  rgb(53, 138, 212) 0%, rgb(255, 255, 255) 50%,  rgb(53, 138, 212)  100%);
 
    /*background-image: url("https://p7.hiclipart.com/preview/871/719/600/triangle-geometry-colorful-diamond-background-vector.jpg");
    background-position: center;
@@ -119,7 +120,7 @@ main{
     position: absolute;
     top: -5px;
     right: -5px;
-    border-top: 10px solid rgb(53, 138, 212);
+    border-top: 10px solid rgb(29, 102, 165);
     border-right: 10px solid rgb(53, 138, 212);
     
 }
@@ -132,8 +133,8 @@ main{
     position: absolute;
     bottom: -5px;
     left: -5px;
-    border-bottom: 10px solid rgb(236, 197, 65);
-    border-left: 10px solid rgb(236, 197, 65);
+    border-bottom:  10px solid rgb(29, 102, 165);
+    border-left:  10px solid rgb(53, 138, 212);
 }
 
 #gameTeams{
@@ -144,7 +145,7 @@ main{
 
 #teamsLogo{
    display: flex;
-   margin-left: 50px;
+   margin-left: 25px;
    padding: 10px;
 }
 
@@ -171,6 +172,7 @@ main{
 #vs{
     margin-top:50px;
     color: black;
+    padding: 10px;
 }
 
 #down-sideDiv{
@@ -277,8 +279,8 @@ td{
 }
 
 .spDiv{
-    width: 150px;
-    height: 180px;
+    width: 130px;
+    height: 150px;
 }
 
 .spDiv > a > img{
@@ -310,6 +312,7 @@ td{
 
     .sideNews > img{
        width: 100%;
+       height: 150px;
     }
 
     .sideDiv-text{
