@@ -1,1 +1,77 @@
+<head>
+    <title>Istorija</title>
+    <link rel="stylesheet" href="/css/about.css">
+
+<meta property="og:url"           content="https://fkjezero.herokuapp.com/history" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="FK JEZERO" />
+<meta property="og:description"   content="Istorija" />
+<meta property="og:image"         content="https://fkjezero.herokuapp.com/images/istorijafkj.jpg" />
+
+</head>
+
 <%- include ('partials/header') %>
+
+<div class="container" style="margin-bottom: 50px;">
+
+    <h1 id="h1-fkj" style="padding-top: 35px;">Istorija FK Jezera</h1>
+
+    <div class="borderAbout"></div>
+
+    <div id="divImg">
+        <img src="/images/istorijafkj.jpg"  class="my-img-container"> 
+    </div>
+
+    <p id="my-p" class="p-history">
+        Prije Drugog svjetskog rata osnovan je prvi fudbalski klub u gradu Plav. Zvanično, godina osnivanja FK Jezera bila je 1934. Klub je dobio ime po Plavskom jezeru, 
+        na čijoj je obali izgrađen grad Plav.<br>
+        Prvi značajan uspjeh, FK Jezero postiglo je u sezoni 1968-69. Osvojili su titulu crnogorske četvrte lige - šampiona Sjevera i stekli promociju u Crnogorsku republičku ligu.
+        Nakon jedne sezone, ispali su. Tokom sedamdesetih, plavci su igrali još tri sezone u Republičkoj ligi. Imali su slične rezultate tokom naredne decenije, 
+        koje su provedene u trećem i četvrtom rangu službenih takmičenja u SFR Jugoslaviji.<br>
+        Era uspjeha započela je u drugoj polovini devedesetih. FK Jezero je u Crnogorskoj četvrtoj ligi bilo u vrhu tabele, sa skoro završenom promocijom u sezoni 1995–96.
+         Ali, u meču za naslov, izgubili su domaću utakmicu od susjednog tima iz Andrijevice ~ FK Komovi. Utakmicu su pratili brojni incidenti u kojima je ranjeno na desetine 
+        igrača i navijača FK Jezera.<br>
+         Ekipa iz Plava stekla je još jednu promociju u Republičku ligu nakon sezone 1997–98. Na višem nivou, sastali su se sa vječno suparničkom ekipom FK Gusinje, koja je
+         bila stalni član Crnogorske republičke lige. Lokalni derbiji između FK Jezera i FK Gusinja odigrali su se pred hiljadama gledalaca. 
+        Najviše je zabilježeno na utakmici u Plavu tokom 1999. godine, kojoj je prisustvovalo 7.000 gledaoca.
+        Jedan od izvanrednih rezultata, FK Jezero  postiglo je u sezoni 2001–02. Nakon teške borbe sa FK Komom, ekipa iz Plav-a završila je kao vicešampion 
+        Republičke lige i stekla svoju prvu ikada promociju u Jugoslovensku drugu ligu.
+        <br>
+        Prilikom svog debija u Drugoj ligi, FK Jezero ugostilo je FK Iskru (1-0), ali utakmica se igrala protiv značajne crnogorske ekipe 2002–03 FK Budućnost (0-2),
+         kojoj je u Plavu prisustvovalo 5.000 gledalaca. Na kraju, FK Jezero nije uspjelo ostati član Druge lige.  Nakon nezavisnosti Crne Gore, 
+        FK Jezero postalo je član Druge lige Crne Gore, gdje su nastavili sa dobrim rezultatima. Značajna sezona bila je 2007-08.
+         Godine kada su osvojili naslov druge lige. Tim rezultatom ekipa iz Plava promovirana je u Crnogorsku prvu ligu, što ostaje najveći uspjeh u historiji kluba.
+        <br>
+        Tada je FK Jezero provelo samo jednu sezonu u Prvoj CFL, a većina domaćih utakmica igrale su se na gradskom stadionu Berane, zbog nedostatka
+         infrastrukture na stadionu Pod Racinom. Na kraju sezone u svom rodnom gradu odigrali su samo nekoliko utakmica, uključujući utakmicu protiv FK Budućnosti.
+         Tokom sezone, FK Jezero napravilo je nekoliko iznenađenja poput pobjede protiv FK Sutjeske (2-1) i dva remija protiv Budućnosti (1-1; 2-2). Nakon 33 sedmice,
+         FK Jezero završilo je na 10. poziciji, ali je poražen u baražu za ispadanje od FK Mornara (0-0; 1-2).
+        Od tada je FK Jezero igralo u crnogorskoj Drugoj ligi, ali bez značajnih rezultata sve do sezone 2019-20, kada su završili kao drugoplasirani.
+         S tim uspjehom, FK Jezero je sudjelovao u baražu za promociju, a protivnik im je bio FK Kom. Prva utakmica, odigrana u Podgorici, 
+        završena je tijesnom pobjedom 1 : 0 za FK Kom. Druga utakmica, odigrana u Plavu, završena je senzacionalno, jer je FK Jezero pobijedilo 3-1
+         i steklo promociju u Prvu CFL, prvu nakon 11 godina provedenih u drugoligašu.
+        
+         
+   </p>
+
+   <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your share button code -->
+<div class="fb-share-button" style="margin-left: -65vw ;"
+data-href="https://fkjezero.herokuapp.com/history" 
+data-layout="button_count">
+</div>
+
+</div>
+
+
+<%- include ('partials/footer') %>

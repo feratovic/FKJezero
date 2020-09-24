@@ -66,6 +66,16 @@ body{
     overflow: hidden;
 }
 
+/*          HISTORY              */
+
+.p-history{
+    margin-top: 30px;
+    font-size: 20px;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
 @media screen and (max-width: 600px) {
     .my-img-container{
         width: 100%;
@@ -91,5 +101,11 @@ body{
     
     #h1-fkj{
         font-size: 30px;
+    }
+
+    .p-history{
+        margin-top: 10px;
+        font-size: 150px;
+
     }
 }
