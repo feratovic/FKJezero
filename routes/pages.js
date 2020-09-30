@@ -20,8 +20,8 @@ let tabela = JSON.parse(rawdata);
 let rawdata2 = fs.readFileSync('./json/fixture.json');
 let fix = JSON.parse(rawdata2);
 
-
-for(let k = fix.fixture.length-1; k>0; k--){
+let k;
+for( k = fix.fixture.length-1; k>0; k--){
 
       let str = fix.fixture[k].date;
 
@@ -35,21 +35,32 @@ for(let k = fix.fixture.length-1; k>0; k--){
       
       if(now > tempDate){
             delete fix.fixture[k];
+            //console.log(k);
+
       }
-     // console.log('date now ' + now);
+      //console.log(fix.fixture.length);
+      //console.log('date now ' + now);
       
 }
 
 //Home page
 router.get('/',  function (req, res) {
-    //  console.log(fix.fixture);
+      
+      let temp = fix.fixture[fix.fixture.length];
+
+      for(let p =0; temp === undefined; p++){
+            temp = fix.fixture[fix.fixture.length - p];
+
+      }
+
+      console.log(temp);
       News.find({ }).sort({ date : -1})
                 .then( results => {
                   res.render('home',
                   {
                         news: results,
                         data: tabela.table,
-                        game: fix.fixture[fix.fixture.length-1]
+                        game: temp
                   })
             })
                 .catch((err) => console.log(err))
