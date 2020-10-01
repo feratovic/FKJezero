@@ -347,4 +347,8 @@ td{
         margin:auto;
         margin-bottom: 15px;
     }
+
+    #down-sideDiv > h3 {
+        font-size: 5vw;
+    }
 }
