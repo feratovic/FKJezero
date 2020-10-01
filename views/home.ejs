@@ -103,17 +103,17 @@
 
           <div id="teamsLogo">
             <div id="homeTeam"><img src="images/fkjezero.png" alt="<%=game.home%>">
-             <h5><%= game.home %></h5>
+             <h5 style="color: rgb(0, 0, 0);"><%= game.home %></h5>
             </div>
           <h2 id="vs">VS</h2>
             <div id="guestTeam"><img src="images/fkjezero.png" alt="<%=game.guest%>">
-             <h5><%= game.guest %></h5>
+             <h5 style="color: rgb(0, 0, 0);"><%= game.guest %></h5>
             </div>
            </div>
            <br><br>
 
-         <h4 style="font-size: 20px;color: black;" ><%= (game.date).substring(0, 10) %></h4>
-         <h4 style="font-size: 25px;color: black;" ><%= (game.date).substring(11, 16) %></h4>
+         <h4 style="font-size: 20px;color: black;" ><i class="fa fa-calendar-o" style="font-size: 26px;" ></i>&nbsp; <%= (game.date).substring(0, 10) %></h4>
+         <h4 style="font-size: 25px;color: black;" ><i class="far fa-clock"></i>&nbsp; <%= (game.date).substring(11, 16) %></h4>
          <h4 style="font-size: 15px;"><%= game.league %></h4>
          
         </div>
@@ -181,7 +181,6 @@
      table[1].cells[0].style.backgroundColor = "#0f4c75";
      table[2].cells[0].style.backgroundColor = "#3282b8";
      table[3].cells[0].style.backgroundColor = "#3282b8";
-     table[4].cells[0].style.backgroundColor = "#3282b8";
      table[8].cells[0].style.backgroundColor = "#ff1e56";
      table[9].cells[0].style.backgroundColor = "#ff1e56";
      table[10].cells[0].style.backgroundColor = "#931a25";

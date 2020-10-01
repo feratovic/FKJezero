@@ -8,7 +8,7 @@
 
 <div class="topnav" id="myTopnav"> 
 
-  <a  class="image-container"  href="/"></a>
+  <a  class="image-container"  href="/">
     <img class="logo-img" src="images/fkjezero.png" alt="Logo FKJezero" width="100" height="95">
   </a>
 
@@ -76,11 +76,5 @@ const href = (window.location.href).toString();
 
 const logo = document.getElementsByClassName("logo-img");
 
-logo[0].addEventListener("click", takeMeToHome);
 
-function takeMeToHome() {
-   url = href.slice(0, 30);
-   console.log(url);
-   location.replace(url);
-}
 </script>

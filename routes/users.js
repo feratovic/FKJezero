@@ -20,11 +20,13 @@ router.get('/login', (req, res) =>
 );
 
 //Register page
+/*
 router.get('/register', (req, res) => 
       res.render('register')
-);
+);*/
 
 //Register Handle
+/*
 router.post('/register', (req, res ) => {
      // console.log(req.body)
     //  res.send('hello');
@@ -92,7 +94,7 @@ router.post('/register', (req, res ) => {
                 });
       }
 });
-
+*/
 //Login Handle
 router.post('/login', (req, res, next) => {
     passport.authenticate('local',{

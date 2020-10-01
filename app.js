@@ -5,6 +5,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require("passport");
 const bodyParser = require("body-parser");
+const fs = require("fs");
 
 const app = express();
 app.use(express.static('public'));
@@ -14,6 +15,23 @@ require('dotenv').config()
 //Passport congif
 require('./config/passport')(passport);
 
+//server log
+app.use((req, res, next) => {
+   
+   // console.log("Request time!");
+    req.requestTime = (new Date()).toString();
+    const log = `${req.requestTime} -> Method: ${req.method}; URL:${req.url}; IP -> ${req.ip}`;
+    if(!req.url.includes("/socket.io/?X_LOCAL_SECURITY_COOKIE") ){
+    fs.appendFile("server log", log + "\n", (err) => {
+       // console.log("append");
+        if(err){
+            console.log(err);
+        }
+    })
+}
+   // console.log(log);
+    next();
+})
 
 
 //DB Config

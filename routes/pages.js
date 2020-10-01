@@ -53,7 +53,7 @@ router.get('/',  function (req, res) {
 
       }
 
-      console.log(temp);
+    //  console.log(temp);
       News.find({ }).sort({ date : -1})
                 .then( results => {
                   res.render('home',
@@ -107,9 +107,10 @@ router.get('/shop', (req, res) =>
       res.render('shop')
 );
 
-router.get('/news/newsClone/:id',  (req, res) => 
+router.get('/news/newsClone/:id',  (req, res) => {
       /* if nom exists in database -> return ejs template with vars */
       /* else return 404 */
+
       News.find( {url: 'newsClone/' + req.params.id })
           .then( results => {
             res.render('newsClone',
@@ -118,7 +119,8 @@ router.get('/news/newsClone/:id',  (req, res) =>
             })
           }) 
           .catch((err) => console.log(err))
-);
+      
+      });
     
 
 router.use('/news', (req, res) => {
@@ -162,7 +164,12 @@ router.use('/news', (req, res) => {
       }
 });
 
+router.get('*', (req, res) => {
+      res.render('error');
+});
 
-
+router.get('team/*' || 'news/*' || 'history/*' || 'about/*' || 'shop/*', (req, res) => {
+      res.render('error');
+});
 
 module.exports = router;

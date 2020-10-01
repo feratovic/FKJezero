@@ -6,7 +6,7 @@ body {
   }
 
   header{
-    border-bottom: 4px solid #eeeeee;
+    border-bottom: 4px solid #ffffff;
     background: rgb(92,174,244);
     background: linear-gradient(90deg, rgba(92,174,244,1) 0%, rgba(54,119,196,1) 37%, rgba(17,40,184,1) 100%);
 
@@ -14,7 +14,7 @@ body {
   
   .info{
       width: 100%;
-      background-color: #eeeeee;
+      background-color: #ffffff;
       color: rgb(56, 56, 56);
       font-size: 14px;
   }
@@ -52,6 +52,12 @@ body {
 
   .image-container{
    margin-left: 5%;
+   text-decoration: none;
+  }
+
+  .image-container:hover{
+    text-decoration: none;
+    background-color:  rgb(92,174,244);
   }
 
   .logo-img{
@@ -62,7 +68,7 @@ body {
   .topnav .item {
     float: right;
     display: block;
-    color: #eeeeee;
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -79,7 +85,7 @@ body {
   }
   
   .topnav a.active {
-    background-color: #eeeeee;
+    background-color: #ffffff;
     color: rgb(102, 102, 102);
   }
   

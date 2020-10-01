@@ -1,5 +1,5 @@
 body{
-    background-color: #eeeeee;
+    background-color: #ffffff;
     overflow-x: hidden;
 }
 
@@ -100,8 +100,13 @@ main{
    padding-bottom: 20px;
    border-radius: 2px;
    position: relative;
-  
-   background: linear-gradient(30deg,  rgb(53, 138, 212) 0%, rgb(255, 255, 255) 50%,  rgb(53, 138, 212)  100%);
+   background-image:
+   linear-gradient(to bottom, rgb(250, 250, 250,0.7),  rgba(92, 173, 244, 0.8)),
+   url('../images/fans.jpg');
+    background-position: center;
+    background-size: cover;
+
+   /*background: linear-gradient(30deg,  rgb(53, 138, 212) 0%, rgb(255, 255, 255) 50%,  rgb(53, 138, 212)  100%);*/
 
    /*background-image: url("https://p7.hiclipart.com/preview/871/719/600/triangle-geometry-colorful-diamond-background-vector.jpg");
    background-position: center;
@@ -145,13 +150,13 @@ main{
 
 #teamsLogo{
    display: flex;
-   margin-left: 25px;
+   margin-left: 40px;
    padding: 10px;
 }
 
 #homeTeam{
-  width: 150px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
 }
 
 #homeTeam > img {
@@ -160,8 +165,8 @@ main{
 }
 
 #guestTeam{
-    width: 150px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
 }
   
 #guestTeam > img {
@@ -230,7 +235,7 @@ td{
 .read-more{
     text-decoration: none;
     border: none;
-    
+    background-color: white;
 }
 
 

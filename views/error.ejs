@@ -1,0 +1,30 @@
+
+<head>
+    <title>Greška</title>
+    <link rel="stylesheet" href="/css/news.css">
+</head>
+<body>
+    <%- include ('partials/header') %>
+
+    <div style="padding:50px" id="error-div">
+        <h2>NIJE PRONAĐEN NIJEDAN REZULTAT</h2>
+        <div id="errorImg">
+          <img src="../../images/warning.png" alt="error">
+        </div>
+      </div>
+</body>
+
+
+<script>
+  let img = document.getElementsByClassName("logo-img");
+  img[0].src = '../../images/fkjezero.png';
+
+  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = '../../images/fkjezero.png';
+  document.getElementsByTagName('head')[0].appendChild(link);
+
+</script>
+
+<%- include ('partials/footer') %>
