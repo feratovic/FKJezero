@@ -111,15 +111,34 @@ router.get('/news/newsClone/:id',  (req, res) => {
       /* if nom exists in database -> return ejs template with vars */
       /* else return 404 */
 
-      News.find( {url: 'newsClone/' + req.params.id })
-          .then( results => {
-            res.render('newsClone',
-            {
-                  news: results
-            })
-          }) 
-          .catch((err) => console.log(err))
-      
+      let value = 0;
+      News.countDocuments( {}, function(err, result){
+
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log(result)
+            value = result;
+        }
+
+      })
+      .then(value => {
+            console.log(value + " " + req.params.id);
+            if(req.params.id >= value){
+                  res.render('error');
+            }else{
+                  News.find( {url: 'newsClone/' + req.params.id })
+                  .then( results => {
+                    res.render('newsClone',
+                    {
+                          news: results
+                    })
+                  }) 
+                  .catch((err) => console.log(err))
+            }
+              
+      });
       });
     
 

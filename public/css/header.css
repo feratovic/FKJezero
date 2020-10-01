@@ -52,12 +52,6 @@ body {
 
   .image-container{
    margin-left: 5%;
-   text-decoration: none;
-  }
-
-  .image-container:hover{
-    text-decoration: none;
-    background-color:  rgb(92,174,244);
   }
 
   .logo-img{
