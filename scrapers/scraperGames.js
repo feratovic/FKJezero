@@ -3,7 +3,7 @@ const axios = require("axios");
 const fs = require('fs');
 var cron = require('cron');
 
-var scrapFix = cron.job('0 0 0 * * *', function(){
+var scrapFix = cron.job('0 0 * * *', function(){
 
 async function fetchHtml(url) {
     try{

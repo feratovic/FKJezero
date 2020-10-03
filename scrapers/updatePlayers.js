@@ -10,7 +10,7 @@ let players = JSON.parse(rawdata);
 var cron = require('cron');
 
 //console.log(players);
-var update = cron.job('0 0 0 * * *', function(){
+var update = cron.job('0 0 * * *', function(){
 
 
 //console.log(players.players);

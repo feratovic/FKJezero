@@ -5,7 +5,7 @@ var cron = require('cron');
 
 
 
-var scrap = cron.job('0 0 0 * * *', function(){
+var scrap = cron.job('0 0 * * *', function(){
  
 
 async function fetchHtml(url) {
