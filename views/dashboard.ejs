@@ -1,3 +1,4 @@
+
 <div class="container">
 <h1 class="mt-4">Dashboard</h1>
 <p class="lead mb-3">Welcome <%= name %></p>
@@ -258,7 +259,7 @@
     <% for(let k = 0; k<news.length; k++) { %>
     <tr>
       <th scope="row"><%= k+1 %></th>
-      <td><%= news[k].name %> </td>
+      <td><%= news[k].name.substring(0, 35) %> </td>
       <td><form action="/users/dashboard" method="POST">
     
         <input 

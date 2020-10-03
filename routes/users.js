@@ -146,7 +146,7 @@ router.post('/dashboard', (req, res) => {
                         console.log('error' + err);
                   } else {
                         if(req.file == undefined){
-                              console.log('no file loades')
+                              console.log('no image loaded');
                         } else {
                               console.log('updated');
                   if(req.body.name){
@@ -188,9 +188,10 @@ router.post('/dashboard', (req, res) => {
              
                    })
                    .then(value => {
+                         let pasus = (req.body.description)
                          const newNews = new News({
                                name: req.body.nameNews,
-                               description: req.body.description,
+                               description: pasus,
                                imgUrl: 'imagesDB/' + req.file.filename,
                                url: `newsClone/${value}`
                            });
