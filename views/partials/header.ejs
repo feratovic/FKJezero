@@ -1,33 +1,43 @@
 <header>
-  <div class="info">
-     <p class="p-info"><a href="tel:+38251-250-163" style="color: black;"> 051 250 163 </a>  |  <a href="mailto: fkjezero.plav@hotmail.com" style="color: black;"> fkjezero.plav@hotmail.com</a> 
-        <a href="https://www.facebook.com/FKJezeroPlav1/" class="my-icons"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/fkjezero_official.page/" class="my-icons"><i class="fa fa-instagram"></i></a>
-      </p>
-  </div>
 
-<div class="topnav" id="myTopnav"> 
+    <div id="app">
 
-  <a  class="image-container"  href="/">
-    <img class="logo-img" src="images/fkjezero.png" alt="Logo FKJezero" width="100" height="95">
-  </a>
+      <div id="text">
 
-  <span id="span-text">FK JEZERO <br> PLAV</span>
+        <a href="#">
+          <p class="appText">FUDBALSKI KLUB JEZERO</p>
+          <p class="appText">PLAV</p>
+        </a>
 
-  <a class="item" href="/about">O klubu</a>
-  <a class="item" href="/shop">Web shop</a>
-  <a class="item" href="/history">Istorija</a>
-  <a class="item" href="/news">Vijesti</a>
-  <a class="item" href="/team">Tim</a>
-  <a class="item" href="/" >Početna</a>
+      </div>
 
-    
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+      <div id="headMob">
 
-</div>
+        <a href="/"><img src="images/jezeroLogo.svg" width="100" ></a>
+        <a href="/">
 
+            <p>FUDBALSKI KLUB JEZERO</p>
+            <p>PLAV</p>
+            
+        </a>
+
+      </div>
+
+      <img src="images/navBar.svg" id="imageNavBar">
+      <a href="/" class="btnLogo"></a>
+      
+      <div id="bars"><i class="fas fa-bars"></i></div>
+
+      <ul>
+          <li><a class="item" href="/" >Početna</a></li>
+          <li><a class="item" href="/team">Tim</a></li>
+          <li><a class="item" href="/news">Vijesti</a></li>
+          <li><a class="item" href="/history">Istorija</a></li>
+          <li><a class="item" href="/shop">Web shop</a></li>
+          <li><a class="item" href="/about">O klubu</a></li>
+      </ul>
+
+    </div>
 </header>
 <script>
 function myFunction() {
@@ -75,6 +85,8 @@ const href = (window.location.href).toString();
    }
 
 const logo = document.getElementsByClassName("logo-img");
+
+
 
 
 </script>

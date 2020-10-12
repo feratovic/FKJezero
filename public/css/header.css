@@ -1,131 +1,149 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
 
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
 
-  header{
-    border-bottom: 4px solid #ffffff;
-    background: rgb(92,174,244);
-    background: linear-gradient(90deg, rgba(92,174,244,1) 0%, rgba(54,119,196,1) 37%, rgba(17,40,184,1) 100%);
+#app{
+  width: 100%;
+  margin: auto;
+  margin-top: -3.6vw;
+  text-align: right;
+}
 
-  }
-  
-  .info{
-      width: 100%;
-      background-color: #ffffff;
-      color: rgb(56, 56, 56);
-      font-size: 14px;
-  }
+.appText{
+  font-size: 1.3rem;
+  line-height: 0.5;
+}
 
+#app > img{
+  width: 100%;
+}
 
-  .p-info{
-   margin-left: 3%; 
-   line-height:1.5em;
-  }
+ul{
+  position: relative;
+  top: -5vw;
+}
 
-  .my-icons{
-    float: right;
-    padding-left: 0px;
-    padding-right: 30px;
-  }
+li{
+  display: inline;
+}
 
-  #span-text{
-    position: absolute;
-    left: 15%;
-    top: 45px;
-    font-weight: 800;
-    font-size: 25px;
-    background: linear-gradient(
-      to right,
-      #eeeeee,
-      #b8c9d8
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.item{
+  text-decoration: none;
+  color:white;
+  font-size: 1.6vw;
+  padding: 0px 20px;
+}
 
-  .topnav {
-    overflow: hidden;
-  }
+.item:hover{
+  background-color: rgb(255, 255, 255);
+  -webkit-clip-path: polygon(100% 0, 86% 100%, 0 100%, 0 0);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  color: black;
+  text-decoration: none;
+ }
 
-  .image-container{
-   margin-left: 5%;
-  }
+#text{
+  text-align: left;
+  position: relative;
+  left: 20.3vw;
+  top: 4vw;
+  width: auto;
+  padding: 5px 10px;
+}
 
-  .logo-img{
-    overflow:hidden; 
-  }
-  
-  
-  .topnav .item {
-    float: right;
-    display: block;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    margin-top: 50px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    width: 140px;
-  }
-  
-  .topnav a:hover {
-    background-color: #000000;
-    color: #eeeeee;
-  }
-  
-  .topnav a.active {
-    background-color: #ffffff;
-    color: rgb(102, 102, 102);
-  }
-  
-  .topnav .icon {
+#text > a{
+  color: #4C4C4C;
+}
+
+#text > a > p{
+  font-size: 1.5vw;
+
+}
+
+#text > a:hover{
+  text-decoration: none;
+}
+
+.btnLogo{
+  display: block;
+  width: 7vw;
+  height: 9.5vw;
+  position: absolute;
+  left: 13vw;
+  top: 0%;
+}
+
+#bars{
+  display: none;
+}
+
+#headMob{
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+
+#app{
+  text-align: left;
+
+}
+ul{
     display: none;
+    margin-top: 4vw;
+    background-color: black;
+}
 
-  }
-  @media screen and (max-width: 1000px) {
-    #span-text{
-      left: 37%;
-      top: 8%;
-      font-size: 15px;
+#text{
+ display: none;
+}
 
-    }
-  }
+#headMob{
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+}
 
-  @media screen and (max-width: 1000px) {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-      float: right;
-      padding: 25px;
-      display: block;
-      font-size: 30px;
-    }
+#headMob > a{
+  color: #4C4C4C;
+  text-decoration: none;
+  line-height: 0.5;
+  font-size: 20px;
+}
 
-    .topnav .item {
-      width: 100%;
-      margin-top: 0;
-    }
+#headMob > a > p{
+  margin-top: 10px;
+}
 
-    .my-icons{
-      padding-right: 10px;
-    }
-  }
-  
-  @media screen and (max-width: 1000px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  }
+#imageNavBar{
+  content: url('../images/navBarMob.svg');
+  width: 100%;
+}
 
+#bars{
+  display: block;
+  position: absolute;
+  right: 5vw;
+  top: 180px;
+}
+
+#bars > i {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+
+li{
+  display: block;
+  padding: 5px 5px;
+  border-bottom: 1px solid white;
+}
+
+.item{
+  color: rgb(255, 255, 255);
+  font-size: 4.5vw;
+
+}
+}

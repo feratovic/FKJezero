@@ -8,6 +8,12 @@ const PlayerSchema = new mongoose.Schema({
     imgUrl: {
         type: String
     },
+    contentType: {
+        type: String
+    },
+    image: {
+        type: Buffer
+    },
     position: {
         type: String,
         required: true

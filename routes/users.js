@@ -4,6 +4,7 @@ const bycript = require('bcryptjs');
 const passport = require('passport');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 // User model
 const User = require('../models/User');
@@ -107,10 +108,12 @@ router.post('/login', (req, res, next) => {
 
           // Set The Storage Engine
           const storage = multer.diskStorage({
-            destination: './public/imagesDB',
-            filename: function(req, file, cb){
-                  cb(null,  file.originalname);
-            }
+            destination: function(req, file, cb){
+                  cb(null, './public/imagesDB')
+              },
+              filename: function(req, file, cb){
+                  cb(null, file.fieldname + '_' + Date.now() + path.extname(file.originalname))
+              }
             });
 
           // Init Upload
@@ -150,14 +153,16 @@ router.post('/dashboard', (req, res) => {
                         } else {
                               console.log('updated');
                   if(req.body.name){
+                        var img = fs.readFileSync(req.file.path);
+                        var encode_image = img.toString('base64');
 
-                       const temp = 'imagesDB/' + req.file.filename ;
-                      // console.log(req.file.filename);
                   const newPlayer = new Player({
                         name: req.body.name,
                         position: req.body.position,
                         number: req.body.number,
-                        imgUrl: temp,
+                        imgUrl: req.file.path.substring(7, req.file.path.length),
+                        contentType: req.file.mimetype,
+                        image: new Buffer(encode_image, 'base64'),
                         age: req.body.age,
                         games: req.body.games,
                         goals: req.body.goals,
@@ -188,11 +193,16 @@ router.post('/dashboard', (req, res) => {
              
                    })
                    .then(value => {
+                        var img = fs.readFileSync(req.file.path);
+                        var encode_image = img.toString('base64');
+
                          let pasus = (req.body.description)
                          const newNews = new News({
                                name: req.body.nameNews,
                                description: pasus,
-                               imgUrl: 'imagesDB/' + req.file.filename,
+                               imgUrl: req.file.path.substring(7, req.file.path.length),
+                               contentType: req.file.mimetype,
+                               image: new Buffer(encode_image, 'base64'),
                                url: `newsClone/${value}`
                            });
              
