@@ -11,6 +11,7 @@
   margin: auto;
   margin-top: -3.6vw;
   text-align: right;
+  overflow-x: hidden;
 }
 
 .appText{
@@ -22,12 +23,12 @@
   width: 100%;
 }
 
-ul{
+#app  ul{
   position: relative;
   top: -5vw;
 }
 
-li{
+#app li{
   display: inline;
 }
 
@@ -91,7 +92,7 @@ li{
   text-align: left;
 
 }
-ul{
+#app ul{
     display: none;
     margin-top: 4vw;
     background-color: black;
@@ -135,7 +136,7 @@ ul{
   font-size: 30px;
 }
 
-li{
+#app li{
   display: block;
   padding: 5px 5px;
   border-bottom: 1px solid white;
@@ -145,5 +146,9 @@ li{
   color: rgb(255, 255, 255);
   font-size: 4.5vw;
 
+}
+
+.btnLogo{
+  display: none;
 }
 }
