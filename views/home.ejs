@@ -7,151 +7,151 @@
 
 <%- include ('partials/header') %>
 
-<main class="row">
-    <div class="col-sm-7" id="newsDiv">
+<main>
+
+  <div id="newsDiv">
         
-       <div id="mainNews" >
-            <img src="<%= news[0].imgUrl %>" alt="Glavna slika">
-            <div class="bottom-left"><h3>
-              <form action="/" method="POST">
+    <div id="mainNews" >
+         <img src="<%= news[0].imgUrl %>" alt="Glavna slika">
+         <div class="bottom-left"><h3>
+           <form action="/" method="POST">
+ 
+             <input 
+               type="text"
+               id="newsUrl"
+               name="newsUrl"
+               class="my-form-control"
+               value="<%= news[0].url%>"
+               placeholder="Enter Name"
+             />
+         
+           <button type="submit" class="read-more-main"><%= news[0].name %></button>
+         </form></h3></div>
+         
+        
+    </div>
     
-                <input 
-                  type="text"
-                  id="newsUrl"
-                  name="newsUrl"
-                  class="my-form-control"
-                  value="<%= news[0].url%>"
-                  placeholder="Enter Name"
-                />
-            
-              <button type="submit" class="read-more-main"><%= news[0].name %></button>
-            </form></h3></div>
-            
+
+    <div class="sideNews">
+         <img src="<%= news[1].imgUrl %>">
+         <div class="sideDiv-text"><h3> 
+           <form action="/" method="POST">
+ 
+           <input 
+             type="text"
+             id="newsUrl"
+             name="newsUrl"
+             class="my-form-control"
+             value="<%= news[1].url%>"
+             placeholder="Enter Name"
+           />
+       
+         <button type="submit" class="read-more"><%= news[1].name.substring(0, 40) %></button>
+       </form></h3>
+           
+        </div>
+    </div>
+    
+   
+    <div class="sideNews">
+         <img src="<%= news[2].imgUrl %>">
+         <div class="sideDiv-text"><h3>
+           <form action="/" method="POST">
+ 
+             <input 
+               type="text"
+               id="newsUrl"
+               name="newsUrl"
+               class="my-form-control"
+               value="<%= news[2].url%>"
+               placeholder="Enter Name"
+             />
+         
+           <button type="submit" class="read-more"><%= news[2].name.substring(0, 40) %></button>
+         </form>
+         </h3>
+           
+        </div>
+    </div>
+    
+
+    <div class="sideNews">
+         <img src="<%= news[3].imgUrl %>">
+         <div class="sideDiv-text"><h3>
+           <form action="/" method="POST">
+ 
+             <input 
+               type="text"
+               id="newsUrl"
+               name="newsUrl"
+               class="my-form-control"
+               value="<%= news[3].url%>"
+               placeholder="Enter Name"
+             />
+         
+           <button type="submit" class="read-more"><%= news[3].name.substring(0, 40) %></button>
+         </form> 
+         </h3>
            
        </div>
-       
+    </div>
+    <a href="/news" id="moreArticles">Jos Članaka</a>
+ </div>
+ 
+ <div id="sideDiv">
 
-       <div class="sideNews">
-            <img src="<%= news[1].imgUrl %>">
-            <div class="sideDiv-text"><h3> 
-              <form action="/" method="POST">
-    
-              <input 
-                type="text"
-                id="newsUrl"
-                name="newsUrl"
-                class="my-form-control"
-                value="<%= news[1].url%>"
-                placeholder="Enter Name"
-              />
-          
-            <button type="submit" class="read-more"><%= news[1].name.substring(0, 40) %></button>
-          </form></h3>
-              
-           </div>
-       </div>
-       
+     <div id="up-sideDiv">
+
+       <div id="teamsLogo">
+         <div id="homeTeam"><img src="images/fkjezero.png" alt="<%=game.home%>">
+          <h5 style="color: rgb(0, 0, 0);"><%= game.home %></h5>
+         </div>
+       <h2 id="vs">VS</h2>
+         <div id="guestTeam"><img src="images/fkjezero.png" alt="<%=game.guest%>">
+          <h5 style="color: rgb(0, 0, 0);"><%= game.guest %></h5>
+         </div>
+        </div>
+        <br><br>
+
+      <h4 style="font-size: 20px;color: black;" ><i class="fa fa-calendar-o" style="font-size: 26px;" ></i>&nbsp; <%= (game.date).substring(0, 10) %></h4>
+      <h4 style="font-size: 25px;color: black;" ><i class="far fa-clock"></i>&nbsp; <%= (game.date).substring(11, 16) %></h4>
+      <h4 style="font-size: 15px;"><%= game.league %></h4>
       
-       <div class="sideNews">
-            <img src="<%= news[2].imgUrl %>">
-            <div class="sideDiv-text"><h3>
-              <form action="/" method="POST">
-    
-                <input 
-                  type="text"
-                  id="newsUrl"
-                  name="newsUrl"
-                  class="my-form-control"
-                  value="<%= news[2].url%>"
-                  placeholder="Enter Name"
-                />
-            
-              <button type="submit" class="read-more"><%= news[2].name.substring(0, 40) %></button>
-            </form>
-            </h3>
-              
-           </div>
-       </div>
-       
-
-       <div class="sideNews">
-            <img src="<%= news[3].imgUrl %>">
-            <div class="sideDiv-text"><h3>
-              <form action="/" method="POST">
-    
-                <input 
-                  type="text"
-                  id="newsUrl"
-                  name="newsUrl"
-                  class="my-form-control"
-                  value="<%= news[3].url%>"
-                  placeholder="Enter Name"
-                />
-            
-              <button type="submit" class="read-more"><%= news[3].name.substring(0, 40) %></button>
-            </form> 
-            </h3>
-              
-          </div>
-       </div>
-       <a href="/news" id="moreArticles">Jos Članaka</a>
-    </div>
-    
-    <div class="col-sm-4" id="sideDiv">
-
-        <div id="up-sideDiv">
-
-          <div id="teamsLogo">
-            <div id="homeTeam"><img src="images/fkjezero.png" alt="<%=game.home%>">
-             <h5 style="color: rgb(0, 0, 0);"><%= game.home %></h5>
-            </div>
-          <h2 id="vs">VS</h2>
-            <div id="guestTeam"><img src="images/fkjezero.png" alt="<%=game.guest%>">
-             <h5 style="color: rgb(0, 0, 0);"><%= game.guest %></h5>
-            </div>
-           </div>
-           <br><br>
-
-         <h4 style="font-size: 20px;color: black;" ><i class="fa fa-calendar-o" style="font-size: 26px;" ></i>&nbsp; <%= (game.date).substring(0, 10) %></h4>
-         <h4 style="font-size: 25px;color: black;" ><i class="far fa-clock"></i>&nbsp; <%= (game.date).substring(11, 16) %></h4>
-         <h4 style="font-size: 15px;"><%= game.league %></h4>
-         
-        </div>
-        <br>
-        <div id="down-sideDiv">
-             
-          <h3 style="color:black;">Tabela - Telekom 1. CFL</h3>
-          <table id="table">
-               <tr>
-                    <th>#</th>
-                    <th>Tim</th>
-                    <th>UT.</th>
-                    <th>POB.</th>
-                    <th>NER.</th>
-                    <th>POR.</th>
-                    <th>G+</th>
-                    <th>G-</th>
-                    <th>GR</th>
-                    <th >BOD.</th>
-               </tr>
-              <% for(let j=0; j<data.length; j++){ %>
-               <tr >
-                   <td class="myRank"><%= data[j].rank %></td>
-                   <td ><%= data[j].name %></td>
-                   <td><%= data[j].matches %></td>
-                   <td><%= data[j].win %></td>
-                   <td><%= data[j].draw %></td>
-                   <td><%= data[j].lose %></td>
-                   <td><%= data[j].gpls %></td>
-                   <td><%= data[j].gmin %></td>
-                   <td><%= data[j].gr %></td>
-                   <td  style="color: black;"><%= data[j].bodovi %></td>
-               </tr>
-               <% } %>
-          </table>
-        </div>
-    </div>
-
+     </div>
+     <br>
+     <div id="down-sideDiv">
+          
+       <h3 style="color:black;">Tabela - Telekom 1. CFL</h3>
+       <table id="table">
+            <tr>
+                 <th>#</th>
+                 <th>Tim</th>
+                 <th>UT.</th>
+                 <th>POB.</th>
+                 <th>NER.</th>
+                 <th>POR.</th>
+                 <th>G+</th>
+                 <th>G-</th>
+                 <th>GR</th>
+                 <th >BOD.</th>
+            </tr>
+           <% for(let j=0; j<data.length; j++){ %>
+            <tr >
+                <td class="myRank"><%= data[j].rank %></td>
+                <td ><%= data[j].name %></td>
+                <td><%= data[j].matches %></td>
+                <td><%= data[j].win %></td>
+                <td><%= data[j].draw %></td>
+                <td><%= data[j].lose %></td>
+                <td><%= data[j].gpls %></td>
+                <td><%= data[j].gmin %></td>
+                <td><%= data[j].gr %></td>
+                <td  style="color: black;"><%= data[j].bodovi %></td>
+            </tr>
+            <% } %>
+       </table>
+     </div>
+ </div>
 
 </main>
 

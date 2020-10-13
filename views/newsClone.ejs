@@ -1,6 +1,7 @@
 <head>
     <title>Vijesti</title>
     <link rel="stylesheet" href="/css/newsClone.css">
+    <script src="../../js/script.js" defer></script>
 
     <!-- You can use Open Graph tags to customize link previews.
 Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
@@ -46,14 +47,20 @@ data-layout="button_count">
 </div>
 
 <script>
-    let img = document.getElementsByClassName("logo-img");
-    img[0].src = '../../images/fkjezero.png';
 
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
     link.href = '../../images/fkjezero.png';
     document.getElementsByTagName('head')[0].appendChild(link);
+
+
+    let img = document.getElementById("imageNavBar")
+    img.src = '../../images/navBar.svg';
+    
+    let imgLogo = document.getElementById('imgLogo');
+    imgLogo.src = '../../images/jezeroLogo.svg';
+
 
 </script>
 
